@@ -14,26 +14,6 @@ const UserSchema = new mongoose.Schema({
     type: String,
     default: null,
   },
-  roles: [{
-    type: String,
-    enum: ['user', 'premium', 'moderator', 'admin'],
-    default: 'user',
-  }],
-  subscription: {
-    type: {
-      type: String,
-      enum: ['free', 'basic', 'premium'],
-      default: 'free',
-    },
-    startDate: {
-      type: Date,
-      default: Date.now,
-    },
-    endDate: {
-      type: Date,
-      default: null,
-    },
-  },
   lastLogin: {
     type: Date,
     default: Date.now,
