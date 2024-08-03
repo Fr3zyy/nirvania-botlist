@@ -50,17 +50,7 @@ class Server {
 
   createMongoStore() {
     try {
-      const store = MongoStore.create({
-        mongoUrl: config.database.url,
-        touchAfter: 24 * 3600,
-        crypto: {
-          secret: "guclubirsecret"
-        }
-      });
-
-      store.on('error', (error) => {
-        logger.error('MongoStore error:', error);
-      });
+      const store = MongoStore.create({ mongoUrl: config.database.url })
 
       logger.info('MongoStore configured successfully');
       return store;
