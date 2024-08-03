@@ -16,13 +16,13 @@ module.exports = {
 
 		// Process Listeners
 		process.on('unhandledRejection', e => {
-			console.log(e);
+			logger.log(e);
 		});
 		process.on('uncaughtException', e => {
-			console.log(e);
+			logger.log(e);
 		});
 		process.on('uncaughtExceptionMonitor', e => {
-			console.log(e);
+			logger.log(e);
 		});
 	},
 };

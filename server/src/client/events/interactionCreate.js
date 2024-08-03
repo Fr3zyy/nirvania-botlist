@@ -39,7 +39,7 @@ module.exports = {
 					command.slashRun(client, interaction);
 				}
 			} catch (e) {
-				console.error(e);
+				logger.error(e);
 				interaction.reply({ content: 'Komut çalıştırılırken bir sorunla karşılaşıldı! Lütfen tekrar deneyin.', ephemeral: true });
 			}
 		}
