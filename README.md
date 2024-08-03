@@ -1,5 +1,5 @@
 
-# Project Title
+# DiscordAPI-Express
 
 Discord Authentication and Management Server
 
@@ -9,7 +9,7 @@ DiscordAPI-Express is a powerful and extensible server and bot management system
 
 ## Table of Contents
 
-- [Project Title](#project-title)
+- [DiscordAPI-Express](#discordapi-express)
   - [Introduction](#introduction)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
