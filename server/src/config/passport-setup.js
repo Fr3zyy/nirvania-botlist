@@ -28,6 +28,8 @@ passport.use(new DiscordStrategy({
     user.lastLogin = new Date();
     await user.save();
 
+    client.logToDiscord(config.server.channels.login,
+      `**${profile.username}** adlı kullanıcı siteye giriş yaptı.`)
     done(null, user);
   } catch (error) {
     logger.error('Error in Discord strategy:', error);

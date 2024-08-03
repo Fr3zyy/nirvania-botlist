@@ -1,4 +1,4 @@
-const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, EmbedBuilder } = require('discord.js');
 const { readdirSync } = require('node:fs');
 const path = require('path');
 const config = require('@/src/config/settings');
@@ -6,8 +6,14 @@ const config = require('@/src/config/settings');
 class DiscordBot {
   constructor() {
     this.client = new Client({
-      intents: Object.values(GatewayIntentBits),
-      partials: Object.values(Partials),
+      intents: [
+        GatewayIntentBits.Guilds,
+        GatewayIntentBits.GuildMembers,
+        GatewayIntentBits.GuildMessages,
+        GatewayIntentBits.MessageContent,
+        GatewayIntentBits.GuildPresences,
+        GatewayIntentBits.GuildVoiceStates,
+      ],
       shards: 'auto',
     });
 
@@ -53,6 +59,33 @@ class DiscordBot {
     } catch (error) {
       logger.error('Failed to log in:', error);
       throw error;
+    }
+  }
+  async logToDiscord(channelId, message, options = {}) {
+    try {
+      const guild = this.client.guilds.cache.get(this.config.server.id);
+      if (!guild) {
+        logger.error(`Guild with ID ${this.config.server.id} not found.`);
+        return;
+      }
+
+      const channel = guild.channels.cache.get(channelId);
+      if (!channel) {
+        logger.error(`Channel with ID ${channelId} not found.`);
+        return;
+      }
+
+      const embed = new EmbedBuilder()
+        .setDescription(message)
+        .setColor(options.color || '#0099ff')
+        .setTimestamp();
+
+      if (options.title) embed.setTitle(options.title);
+      if (options.footer) embed.setFooter({ text: options.footer });
+
+      await channel.send({ embeds: [embed] });
+    } catch (error) {
+      logger.error('Log gönderirken hata oluştu:', error);
     }
   }
 }
