@@ -109,7 +109,7 @@ The server is initialized and started in the following sequence:
 
 The User model schema includes the following fields:
 
-- `discordId`: Unique identifier from Discord.
+- `id`: Unique identifier from Discord.
 - `username`: Discord username.
 - `avatar`: URL to the user's avatar.
 - `lastLogin`: Date of the last login.

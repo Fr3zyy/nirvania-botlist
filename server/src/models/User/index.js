@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const UserSchema = new mongoose.Schema({
-  discordId: {
+  id: {
     type: String,
     required: true,
     unique: true,
@@ -49,8 +49,8 @@ UserSchema.methods.hasRole = function(role) {
   return this.roles.includes(role);
 };
 
-UserSchema.statics.findByDiscordId = function(discordId) {
-  return this.findOne({ discordId: discordId.toString() });
+UserSchema.statics.findByid = function(id) {
+  return this.findOne({ id: id.toString() });
 };
 
 module.exports = mongoose.model('User', UserSchema);

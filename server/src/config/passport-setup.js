@@ -10,11 +10,11 @@ passport.use(new DiscordStrategy({
   scope: ['identify']
 }, async (accessToken, refreshToken, profile, done) => {
   try {
-    let user = await User.findByDiscordId(profile.id);
+    let user = await User.findByid(profile.id);
 
     if (!user) {
       user = new User({
-        discordId: profile.id,
+        id: profile.id,
         username: profile.username,
         discriminator: profile.discriminator,
         avatar: profile.avatar,
@@ -36,12 +36,12 @@ passport.use(new DiscordStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-  done(null, user.discordId);
+  done(null, user.id);
 });
 
-passport.deserializeUser(async (discordId, done) => {
+passport.deserializeUser(async (id, done) => {
   try {
-    const user = await User.findByDiscordId(discordId);
+    const user = await User.findByid(id);
     done(null, user);
   } catch (error) {
     logger.error('Error in deserializeUser:', error);
