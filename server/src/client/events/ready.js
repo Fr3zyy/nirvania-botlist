@@ -18,7 +18,7 @@ module.exports = {
 
 async function setPresence(client) {
   await client.user.setPresence({
-    activities: [{ name: 'UpTime site altyapısı', type: ActivityType.Listening }],
+    activities: [{ name: 'Nirvania Botlist #SOON!', type: ActivityType.Listening }],
     status: 'online',
   });
   logger.info('Bot presence updated successfully');
