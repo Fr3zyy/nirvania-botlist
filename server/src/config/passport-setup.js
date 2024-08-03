@@ -15,7 +15,7 @@ passport.use(new DiscordStrategy({
     if (!user) {
       user = new User({
         id: profile.id,
-        username: profile.username,
+        username: profile.username, 
         discriminator: profile.discriminator,
         avatar: profile.avatar,
       });
