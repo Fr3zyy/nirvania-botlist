@@ -2,13 +2,7 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const BotSchema = new Schema({
-    id: {
-        type: String,
-        required: true,
-        unique: true,
-        index: true
-    },
-    application: {
+    bot: {
         id: String,
         ownerId: String,
         coOwners: [{ type: String }]

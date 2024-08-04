@@ -42,17 +42,17 @@ module.exports = {
           .sort({ [sort]: order })
           .skip((page - 1) * limit)
           .limit(limit)
-          .select('-__v -application.coOwners -links.webhook')
+          .select('-__v -bot.coOwners -links.webhook')
           .lean();
 
         const response = {
           bots: bots.map(bot => ({
-            id: bot.id,
+            id: bot.bot.id,
             profile: {
               username: bot.profile.username,
               avatar: bot.profile.avatar,
               shortDescription: bot.profile.shortDescription,
-              tags: bot.profile.tags
+              tags: bot.profile.tags 
             },
             links: {
               invite: bot.links.invite,
