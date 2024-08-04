@@ -25,6 +25,7 @@ const config = {
         }
     },
     website: {
+        frontEnd: ["http://localhost:3000"],
         botTags: [
             "Fun", "NSFW", "Game", "24/7", "OSU!", "Guard", "Anime", "Music",
             "Memes", "Invite", "Reddit", "Twitch", "Crypto", "Economy",

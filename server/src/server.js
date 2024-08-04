@@ -6,6 +6,7 @@ const path = require('path');
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 const config = require('./config/settings');
+const cors = require('cors');
 
 class Server {
   constructor() {
@@ -16,6 +17,7 @@ class Server {
   async initialize() {
     await this.connectDB();
     this.setupMiddlewares();
+    this.setupCORS();
     this.setupSessions();
     this.setupPassport();
     await this.setupRoutes();
@@ -46,6 +48,15 @@ class Server {
       saveUninitialized: false,
       store: sessionStore,
     }));
+  }
+
+  setupCORS() {
+    const corsOptions = {
+      origin: config.website.frontEnd,
+      credentials: true,
+    };
+    this.app.use(cors(corsOptions));
+    logger.info('CORS configured');
   }
 
   createMongoStore() {
