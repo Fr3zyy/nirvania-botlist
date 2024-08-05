@@ -1,10 +1,11 @@
 "use client"
 import React from 'react';
 import { FaDiscord, FaGithub, FaYoutube } from 'react-icons/fa';
+import config from '../../../config';
 
 const Footer = () => {
     return (
-        <footer className="bg-zinc-950/20 border-t border-zinc-700 py-8 fixed bottom-0 left-0 w-full">
+        <footer className="bg-zinc-950/20 border-t border-zinc-700 py-8 fixed bottom-0 left-0 w-full z-10 hidden md:block">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between space-y-10 md:space-y-0">
                     <div className="flex flex-col space-y-4">
@@ -29,7 +30,7 @@ const Footer = () => {
                         <a href="https://youtube.com/@Fr3zy" target='_blank' rel='noopener noreferrer' className="text-gray-400 hover:text-white transition-colors duration-300">
                             <FaYoutube className='w-6 h-6' />
                         </a>
-                        <a href="https://discord.gg/nirvania-code-1068528773936447578" target='_blank' rel='noopener noreferrer' className="text-gray-400 hover:text-white transition-colors duration-300">
+                        <a href={config.links.discord} target='_blank' rel='noopener noreferrer' className="text-gray-400 hover:text-white transition-colors duration-300">
                             <FaDiscord className='w-6 h-6' />
                         </a>
                     </div>
