@@ -17,7 +17,7 @@ const UserSide = () => {
       <div className="flex items-center space-x-3">
         <div className="flex items-center space-x-2 p-2">
           <img
-            src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png`}
+            src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
             alt={user.username}
             className="w-8 h-8 rounded-full"
           />
