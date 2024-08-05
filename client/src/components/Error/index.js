@@ -2,6 +2,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { FaHome } from 'react-icons/fa';
 
 const ErrorComponent = () => {
     return (
@@ -36,12 +37,12 @@ const ErrorComponent = () => {
                 <div className="mt-5 flex flex-col justify-center items-center gap-2 sm:flex-row sm:gap-3">
                     <Link href={"/"}>
                         <motion.span
-                            className="w-full sm:w-auto py-3 px-4 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-zinc-900/30 border border-white/5 text-white hover:bg-zinc-900/60 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
+                            className="w-full sm:w-auto p-2 inline-flex justify-center items-center gap-x-2 text-sm font-medium rounded-lg bg-zinc-900/30 border border-white/5 text-gray-400 hover:text-white/80 hover:bg-zinc-900/60 focus:outline-none disabled:opacity-50 disabled:pointer-events-none"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.6 }}
                         >
-                            Back to home
+                            <FaHome className='w-5 h-5' />
                         </motion.span>
                     </Link>
                 </div>
