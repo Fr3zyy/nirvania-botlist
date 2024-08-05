@@ -9,6 +9,10 @@ const getApiUrl = () => {
 };
 
 const config = {
+    siteConfig: {
+        name: "Nirvania",
+        description: "Discover the ultimate Discord bot list, featuring a wide range of bots to enhance your server experience. Explore, compare, and find the perfect bot today!"
+    },
     api: getApiUrl(),
     navItems: [
         { icon: FaHome, label: 'Ana Sayfa', target: '/' },
@@ -30,7 +34,16 @@ const config = {
         { flag: 'fr', code: 'fr', name: 'French' },
         { flag: 'es', code: 'es', name: 'Spanish' },
         { flag: 'gr', code: 'el', name: 'Greek' }
-    ]
+    ],
+    errorMessages: {
+        400: 'Invalid request. Please verify your input.',
+        401: 'Access denied. Please log in to continue.',
+        403: 'Access restricted. You lack the necessary permissions.',
+        404: 'Page not found. The resource does not exist.',
+        500: 'Server error. Please try again later.',
+        503: 'Service unavailable. We are currently working on resolving the issue.'
+    }
 };
 
 export default config;
+

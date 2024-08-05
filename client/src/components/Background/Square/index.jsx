@@ -1,7 +1,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 
-export default function EnhancedBackground({ column, row, transparentEffectDirection, blockColor, zIndex }) {
+export default function Square({ column, row, transparentEffectDirection, blockColor, zIndex }) {
     const canvasRef = useRef(null);
 
     useEffect(() => {
@@ -10,7 +10,6 @@ export default function EnhancedBackground({ column, row, transparentEffectDirec
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        // Parçacıklar için
         const particles = [];
         for (let i = 0; i < 50; i++) {
             particles.push({
@@ -25,7 +24,6 @@ export default function EnhancedBackground({ column, row, transparentEffectDirec
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-            // Parçacıkları çiz
             particles.forEach(particle => {
                 ctx.fillStyle = 'rgba(255, 255, 255, 0.5)';
                 ctx.beginPath();
@@ -44,7 +42,6 @@ export default function EnhancedBackground({ column, row, transparentEffectDirec
 
         animate();
 
-        // Pencere boyutu değiştiğinde canvas'ı yeniden boyutlandır
         const handleResize = () => {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
