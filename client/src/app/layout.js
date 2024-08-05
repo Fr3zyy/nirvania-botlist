@@ -1,8 +1,9 @@
-import { Inter } from "next/font/google";
+import { Lexend, Montserrat } from "next/font/google";
 import "./globals.css";
 import { AuthProvider } from "@/hooks/auth";
+import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Nirvania Botlist #SOON",
@@ -12,8 +13,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={lexend.className}>
         <AuthProvider>
+          <Header />
           {children}
         </AuthProvider>
 
