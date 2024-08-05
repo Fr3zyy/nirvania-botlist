@@ -5,7 +5,7 @@ import config from '../../../config';
 
 const Footer = () => {
     return (
-        <footer className="bg-zinc-950/20 border-t border-zinc-700 py-8 fixed bottom-0 left-0 w-full z-10 hidden md:block">
+        <footer className="bg-[#14141c] border-t border-zinc-700 py-8 fixed bottom-0 left-0 w-full z-10 hidden md:block">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col md:flex-row justify-between space-y-10 md:space-y-0">
                     <div className="flex flex-col space-y-4">
