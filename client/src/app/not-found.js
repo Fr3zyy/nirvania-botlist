@@ -12,7 +12,6 @@ export default function NotFoundPage() {
             <Square column="6" row="6" zIndex={0} transparentEffectDirection="leftRightBottomTop" blockColor="#808080" />
 
             <ErrorPage statusCode={404} />
-
         </div>
 
     );
