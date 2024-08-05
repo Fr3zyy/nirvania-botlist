@@ -42,6 +42,9 @@ const config = {
         404: 'Page not found. The resource does not exist.',
         500: 'Server error. Please try again later.',
         503: 'Service unavailable. We are currently working on resolving the issue.'
+    },
+    links: {
+        discord: "https://discord.gg/nirvania-code-1068528773936447578"
     }
 };
 
