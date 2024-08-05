@@ -47,6 +47,7 @@ module.exports = {
 
         const response = {
           bots: bots.map(bot => ({
+            _id: bot._id,
             id: bot.bot.id,
             profile: {
               username: bot.profile.username,
