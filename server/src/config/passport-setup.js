@@ -10,7 +10,7 @@ passport.use(new DiscordStrategy({
   scope: ['identify']
 }, async (accessToken, refreshToken, profile, done) => {
   try {
-    let user = await User.findByid(profile.id);
+    let user = await User.findOne({ id: profile.id });
 
     if (!user) {
       user = new User({
@@ -21,7 +21,6 @@ passport.use(new DiscordStrategy({
       });
     } else {
       user.username = profile.username;
-      user.discriminator = profile.discriminator;
       user.avatar = profile.avatar;
     }
 
