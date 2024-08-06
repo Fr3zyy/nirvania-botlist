@@ -16,7 +16,7 @@ const config = {
     api: getApiUrl(),
     navItems: [
         { icon: FaHome, label: 'Home', target: '/' },
-        { icon: FaCompass, label: 'Discover', target: '/discover' },
+        { icon: FaCompass, label: 'Discover', target: '/bots' },
     ],
     botTags: [
         "Fun", "NSFW", "Game", "24/7", "OSU!", "Guard", "Anime", "Music",
