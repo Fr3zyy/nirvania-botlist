@@ -31,7 +31,7 @@ const Bots = () => {
             {loading ? (
                 <Loader />
             ) : (
-                <div className="max-w-7xl mx-auto">
+                <div className="max-w-7xl mx-auto mb-24">
                     <h1 className="text-3xl font-bold text-zinc-100 mb-8">Discord Bots</h1>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                         {bots.map((bot) => (
