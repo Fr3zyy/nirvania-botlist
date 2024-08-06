@@ -3,7 +3,6 @@ import "./globals.css";
 import { AuthProvider } from "@/hooks/auth";
 import Header from "@/components/Header";
 import config from "../../config";
-import Footer from "@/components/Footer";
 import { Toaster } from "sonner";
 
 const lexend = Lexend({ subsets: ["latin"] });
@@ -23,7 +22,6 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <Header />
           {children}
-          <Footer />
         </AuthProvider>
       </body>
     </html>
