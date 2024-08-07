@@ -25,7 +25,8 @@ const config = {
         }
     },
     website: {
-        frontEnd: ["http://localhost:3000"],
+        origin: ["http://localhost:3000"],
+        frontEnd: "http://localhost:3000"
     }
 };
 

@@ -52,7 +52,7 @@ class Server {
 
   setupCORS() {
     const corsOptions = {
-      origin: config.website.frontEnd,
+      origin: config.website.origin,
       credentials: true,
     };
     this.app.use(cors(corsOptions));
