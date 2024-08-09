@@ -50,16 +50,16 @@ const UserMenu = ({ user, logout }) => (
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-zinc-900/80 backdrop-blur-md border-2 border-zinc-700/50 rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-zinc-900/50 backdrop-blur-md border-2 border-zinc-700/50 rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
               <MenuSection title="USER">
                 <MenuItem href="/profile/@me" icon={FaUserCircle}>Profile</MenuItem>
               </MenuSection>
               <MenuSection title="ADD">
-                <MenuItem href={"/bots/new"} icon={FaRobot} external>Discord Bot</MenuItem>
+                <MenuItem href={"/bots/new"} icon={FaRobot}>Discord Bot</MenuItem>
               </MenuSection>
               <MenuSection title="ACTIONS">
                 <MenuItem href={config.links.discord} icon={FaHeadset} external>Support Server</MenuItem>
-                <MenuItem onClick={logout} icon={FaSignOutAlt} className="text-red-400 hover:text-red-300 hover:bg-red-500/10">
+                <MenuItem onClick={logout} icon={FaSignOutAlt} className="text-red-400 hover:text-red-300 hover:bg-red-500">
                   Logout
                 </MenuItem>
               </MenuSection>
@@ -116,7 +116,7 @@ const LoginButton = ({ login }) => (
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     onClick={login}
-    className="bg-zinc-800/50 backdrop-blur-md text-white py-2 px-4 rounded-full flex items-center space-x-2 transition-all duration-200 border border-zinc-700/50 hover:bg-zinc-700/50"
+    className="bg-zinc-800/20 backdrop-blur-md text-white py-2 px-4 rounded-md flex items-center space-x-2 transition-all duration-300 border border-zinc-700/50 hover:bg-zinc-700/50"
   >
     <FaDiscord className="w-5 h-5" />
     <span className="text-sm font-medium">Login with Discord</span>
