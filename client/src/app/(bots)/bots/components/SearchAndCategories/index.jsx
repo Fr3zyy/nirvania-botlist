@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ChevronDown, ChevronUp, SortAsc, SortDesc } from 'lucide-react';
-import config from '../../../../../../config';
+import config from '@/../config';
 
 const SearchAndCategories = ({ onSearch, onCategorySelect, onSortChange, selectedCategory, sortOption, sortOrder }) => {
     const [searchTerm, setSearchTerm] = useState('');

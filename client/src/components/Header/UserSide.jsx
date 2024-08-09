@@ -55,7 +55,7 @@ const UserMenu = ({ user, logout }) => (
                 <MenuItem href="/profile/@me" icon={FaUserCircle}>Profile</MenuItem>
               </MenuSection>
               <MenuSection title="ADD">
-                <MenuItem href={config.links.discord} icon={FaRobot} external>Bot</MenuItem>
+                <MenuItem href={"/bots/new"} icon={FaRobot} external>Discord Bot</MenuItem>
               </MenuSection>
               <MenuSection title="ACTIONS">
                 <MenuItem href={config.links.discord} icon={FaHeadset} external>Support Server</MenuItem>

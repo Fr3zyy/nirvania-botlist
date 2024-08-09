@@ -4,6 +4,7 @@ import { AuthProvider } from "@/hooks/auth";
 import Header from "@/components/Header";
 import config from "../../config";
 import { Toaster } from "sonner";
+import LayoutWrapper from "@/components/Layout";
 
 const lexend = Lexend({ subsets: ["latin"] });
 
@@ -20,8 +21,10 @@ export default function RootLayout({ children }) {
           className: "bg-gray-900/20 text-white border border-white/5"
         }} />
         <AuthProvider>
-          <Header />
-          {children}
+          <LayoutWrapper>
+            <Header />
+            {children}
+          </LayoutWrapper>
         </AuthProvider>
       </body>
     </html>

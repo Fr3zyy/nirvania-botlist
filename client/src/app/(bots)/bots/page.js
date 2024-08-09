@@ -5,8 +5,7 @@ import Loader from '@/components/Loader';
 import BotCard from './components/Card/BotCard';
 import Pagination from '@/components/Pagination';
 import SearchAndCategories from './components/SearchAndCategories';
-import Square from '@/components/Background/Square';
-import config from '../../../../config';
+import config from '@/../config';
 
 const Bots = () => {
     const [bots, setBots] = useState([]);
@@ -94,7 +93,6 @@ const Bots = () => {
         <motion.div 
             className="p-4 sm:p-6 md:p-8"
         >
-            <Square column="6" row="6" zIndex={0} transparentEffectDirection="leftRightBottomTop" blockColor="#808080" />
             <div className="max-w-7xl mx-auto">
                 <SearchAndCategories 
                     onSearch={handleSearch} 
