@@ -3,7 +3,7 @@ import { Eye, ArrowUpRightFromCircle, Tag, Shield } from 'lucide-react';
 
 const BotCard = ({ bot }) => (
     <Link href={`/bots/${bot.id}`} className="block w-full group">
-        <div className="bg-zinc-900/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.01] border border-white/10">
+        <div className="bg-zinc-900/80 backdrop-blur-sm rounded-lg overflow-hidden shadow-md transition-all duration-300 group-hover:shadow-xl group-hover:scale-[1.01] border-2 border-white/10">
             <div className="relative h-24 sm:h-32">
                 <img
                     src={bot.profile.banner || "https://cdn.discordapp.com/banners/973946557764349992/12e513cba25fff886b02f92bf2f2cae3.webp?size=1024"}
