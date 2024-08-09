@@ -92,10 +92,7 @@ const Bots = () => {
 
     return (
         <motion.div 
-            className="min-h-screen p-4 sm:p-6 md:p-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
+            className="p-4 sm:p-6 md:p-8"
         >
             <Square column="6" row="6" zIndex={0} transparentEffectDirection="leftRightBottomTop" blockColor="#808080" />
             <div className="max-w-7xl mx-auto">
