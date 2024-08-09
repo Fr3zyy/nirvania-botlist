@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Eye, ArrowUpRightFromCircle, Tag, Shield } from 'lucide-react';
+import { Eye, ArrowUpRightFromCircle, Tag, Shield, StarIcon } from 'lucide-react';
 
 const BotCard = ({ bot }) => (
     <Link href={`/bots/${bot.id}`} className="block w-full group">
@@ -41,8 +41,8 @@ const BotCard = ({ bot }) => (
                 </div>
                 <div className="flex items-center justify-between">
                     <div className="flex items-center text-zinc-400 group-hover:text-zinc-300 transition-colors duration-300">
-                        <Eye size={14} className="mr-1" />
-                        <span className="text-xs sm:text-sm">{bot.stats.views} views</span>
+                        <StarIcon size={14} className="mr-1 fill-white" />
+                        <span className="text-xs sm:text-sm">{bot.stats.votes}</span>
                     </div>
                     <button className="px-3 py-1 text-xs sm:text-sm font-medium text-white bg-indigo-600 rounded-full hover:bg-indigo-700 transition-all duration-300 flex items-center group-hover:shadow-md">
                         Invite

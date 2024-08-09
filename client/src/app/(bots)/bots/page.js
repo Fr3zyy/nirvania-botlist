@@ -90,12 +90,12 @@ const Bots = () => {
     };
 
     return (
-        <motion.div 
+        <motion.div
             className="p-4 sm:p-6 md:p-8"
         >
             <div className="max-w-7xl mx-auto">
-                <SearchAndCategories 
-                    onSearch={handleSearch} 
+                <SearchAndCategories
+                    onSearch={handleSearch}
                     onCategorySelect={handleCategorySelect}
                     onSortChange={handleSortChange}
                     selectedCategory={selectedCategory}
@@ -144,11 +144,11 @@ const Bots = () => {
                         >
                             <h2 className="text-2xl font-bold text-white mb-2">No bots found</h2>
                             <p className="text-zinc-400">
-                                {searchTerm 
+                                {searchTerm
                                     ? `No bots match your search "${searchTerm}"`
                                     : selectedCategory
-                                    ? `No bots found in the "${selectedCategory}" category`
-                                    : "There are no bots available at the moment"}
+                                        ? `No bots found in the "${selectedCategory}" category`
+                                        : "There are no bots available at the moment"}
                             </p>
                         </motion.div>
                     )}
