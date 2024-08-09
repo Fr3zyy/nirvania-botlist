@@ -25,12 +25,13 @@ const BotSchema = new Schema({
             validate: {
                 validator: (v) => /^https?:\/\/.+/.test(v),
                 message: props => `${props.value} is not a valid URL!`
-            }
+            },
+            required: true
         },
-        github: { type: String, match: /^https?:\/\/(www\.)?github\.com\/.+/ },
-        website: { type: String, match: /^https?:\/\/.+/ },
-        support: { type: String, match: /^https?:\/\/(discord\.gg|discordapp\.com\/invite)\/.+/ },
-        webhook: { type: String, match: /^https?:\/\/.+/ }
+        github: { required: false, type: String, match: /^https?:\/\/(www\.)?github\.com\/.+/ },
+        website: { required: false, type: String, match: /^https?:\/\/.+/ },
+        support: { required: false, type: String, match: /^https?:\/\/(discord\.gg|discordapp\.com\/invite)\/.+/ },
+        webhook: { required: false, type: String, match: /^https?:\/\/.+/ }
     },
     stats: {
         status: {
@@ -71,16 +72,9 @@ const BotSchema = new Schema({
     toObject: { virtuals: true }
 });
 
-// Indexes
 BotSchema.index({ 'profile.username': 'text', 'profile.shortDescription': 'text' });
 
-// Virtual for average rating
-BotSchema.virtual('averageRating').get(function () {
-    const ratings = Array.from(this.ratings.values());
-    return ratings.length ? ratings.reduce((a, b) => a + b) / ratings.length : 0;
-});
 
-// Middleware: Update lastModified before save
 BotSchema.pre('save', function (next) {
     this.lastModified = new Date();
     next();
