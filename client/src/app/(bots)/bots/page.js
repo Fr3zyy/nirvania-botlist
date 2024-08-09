@@ -6,6 +6,7 @@ import BotCard from './components/Card/BotCard';
 import Pagination from '@/components/Pagination';
 import SearchAndCategories from './components/SearchAndCategories';
 import Square from '@/components/Background/Square';
+import config from '../../../../config';
 
 const Bots = () => {
     const [bots, setBots] = useState([]);
@@ -28,7 +29,7 @@ const Bots = () => {
                 sort: sort,
                 order: order
             }).toString();
-            const response = await fetch(`http://localhost:3001/bots?${queryParams}`);
+            const response = await fetch(`${config.api}/bots?${queryParams}`);
             const data = await response.json();
             setBots(data.bots);
             setTotalPages(data.pagination.pages);
