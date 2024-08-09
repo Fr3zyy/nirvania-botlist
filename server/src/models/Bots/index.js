@@ -10,6 +10,7 @@ const BotSchema = new Schema({
     profile: {
         username: String,
         avatar: String,
+        banner: String,
         shortDescription: {
             type: String,
             maxlength: [200, 'Short description cannot exceed 200 characters']
@@ -42,6 +43,11 @@ const BotSchema = new Schema({
             default: 0,
             min: [0, 'Votes cannot be negative']
         },
+        votes: {
+            type: Number,
+            default: 0,
+            min: [0, 'Views cannot be negative']
+        },
         promoted: {
             type: Boolean,
             default: false
@@ -69,13 +75,13 @@ const BotSchema = new Schema({
 BotSchema.index({ 'profile.username': 'text', 'profile.shortDescription': 'text' });
 
 // Virtual for average rating
-BotSchema.virtual('averageRating').get(function() {
+BotSchema.virtual('averageRating').get(function () {
     const ratings = Array.from(this.ratings.values());
     return ratings.length ? ratings.reduce((a, b) => a + b) / ratings.length : 0;
 });
 
 // Middleware: Update lastModified before save
-BotSchema.pre('save', function(next) {
+BotSchema.pre('save', function (next) {
     this.lastModified = new Date();
     next();
 });
