@@ -31,7 +31,7 @@ const UserMenu = ({ user, logout }) => (
     <Menu>
       {({ open }) => (
         <>
-          <Menu.Button className="flex items-center space-x-2 p-2 bg-zinc-800/50 backdrop-blur-md rounded-full text-white border border-zinc-700/50 transition-all duration-200 hover:bg-zinc-700/50">
+          <Menu.Button className="relative flex items-center space-x-2 p-2 rounded-full text-white transition-all duration-200 animated-border">
             <img
               src={`https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}`}
               alt={user.username}
@@ -50,7 +50,7 @@ const UserMenu = ({ user, logout }) => (
             leaveFrom="transform opacity-100 scale-100"
             leaveTo="transform opacity-0 scale-95"
           >
-            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-zinc-900/80 backdrop-blur-md border border-zinc-700/50 rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
+            <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right bg-zinc-900/80 backdrop-blur-md border-2 border-zinc-700/50 rounded-xl shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50">
               <MenuSection title="USER">
                 <MenuItem href="/profile/@me" icon={FaUserCircle}>Profile</MenuItem>
               </MenuSection>
